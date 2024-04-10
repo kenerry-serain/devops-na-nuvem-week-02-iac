@@ -121,3 +121,15 @@ variable "eks_cluster" {
     ]
   }
 }
+
+variable "ecr_repositories" {
+  type = object({
+    frontend = string
+    backend  = string
+  })
+
+  default = {
+    frontend = "devops-na-nuvem-week/production/frontend"
+    backend  = "devops-na-nuvem-week/production/backend"
+  }
+}
