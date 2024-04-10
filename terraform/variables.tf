@@ -133,3 +133,20 @@ variable "ecr_repositories" {
     backend  = "devops-na-nuvem-week/production/backend"
   }
 }
+
+variable "acm_certificate" {
+  type = object({
+    domain_name       = string
+    validation_method = string
+  })
+
+  default = {
+    domain_name       = "devopsnanuvemweek.com"
+    validation_method = "DNS"
+  }
+}
+
+variable "domain" {
+  type    = string
+  default = "devopsnanuvemweek.com"
+}
